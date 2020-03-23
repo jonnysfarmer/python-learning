@@ -72,25 +72,52 @@
 
 # Classes etc
 
-# define the Vehicle class
-class Vehicle:
-    name = ""
-    kind = "car"
-    color = ""
-    value = 100.00
-    def description(self):
-        desc_str = "%s is a %s %s worth $%.2f." % (self.name, self.color, self.kind, self.value)
-        return desc_str
-# Code
-car1 = Vehicle()
-car2 = Vehicle()
-car1.color = "red"
-car1.value = 60000.00
-car1.name = "fer"
-car2.color = "blue"
-car2.value = 10000.00
-car2.name = "Jump"
-car2.kind = "van"
-# test code
-print(car1.description())
-print(car2.description())
+# # define the Vehicle class
+# class Vehicle:
+#     name = ""
+#     kind = "car"
+#     color = ""
+#     value = 100.00
+#     def description(self):
+#         desc_str = "%s is a %s %s worth $%.2f." % (self.name, self.color, self.kind, self.value)
+#         return desc_str
+# # Code
+# car1 = Vehicle()
+# car2 = Vehicle()
+# car1.color = "red"
+# car1.value = 60000.00
+# car1.name = "fer"
+# car2.color = "blue"
+# car2.value = 10000.00
+# car2.name = "Jump"
+# car2.kind = "van"
+# # test code
+# print(car1.description())
+# print(car2.description())
+
+# # Dictionaries / Objects
+# # Iterating over Dictionaries
+# phonebook = {"John" : 938477566,"Jack" : 938377264,"Jill" : 947662781}
+# for name, number in phonebook.items():
+#     print("Phone number of %s is %d" % (name, number))
+
+# # This deletes "John"
+# phonebook.pop("John") 
+
+# # This adds "Tim" to the phonebook dictionary
+# phonebook["Tim"] = 938377264
+
+# Importing Modules etc
+
+# Here we import 're'.  We find very member in dir(re) - so all the functions
+# if it contains "find" then we append it to the array
+# Last, we sort the array  List
+import re
+
+# Your code goes here
+find_members = []
+for member in dir(re):
+    if "find" in member:
+        find_members.append(member)
+
+print(sorted(find_members))
