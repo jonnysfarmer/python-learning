@@ -26,14 +26,38 @@
 
 # print(do_math(5, 7))
 
-import re 
-# This is Regex
-string = '"I AM NOT YELLING", she said.  Thought I know it to be strong'
-print(string)
-new = re.sub('[A-Z]', '', string)
-print(new)
-new = re.sub('[^0-9]', '', string)
-# This one removes everything apart from numbers
+# import re 
+# # This is Regex
+# string = '"I AM NOT YELLING", she said.  Thought I know it to be strong'
+# print(string)
+# new = re.sub('[A-Z]', '', string)
+# print(new)
+# new = re.sub('[^0-9]', '', string)
+# # This one removes everything apart from numbers
 
+# BASIC CALCULATOR BUILD
+
+
+import re
+
+print('Our Calculator')
+print('Type "quit" to exit\n')
+
+previous = 0
+run = True
+
+def perform_math():
+    global run
+    global previous
+    equation = input ('Enter equation: ')
+    if equation == "quit":
+        run = False
+    else:
+        equation = re.sub('[a-zA-Z,.:()" "]', '', equation)
+        previous = eval(equation)
+        print ("You Typed", previous)
+
+while run:
+    perform_math()
 
 
