@@ -38,26 +38,26 @@
 # BASIC CALCULATOR BUILD
 
 
-import re
+# import re
 
-print('Our Calculator')
-print('Type "quit" to exit\n')
+# print('Our Calculator')
+# print('Type "quit" to exit\n')
 
-previous = 0
-run = True
+# previous = 0
+# run = True
 
-def perform_math():
-    global run
-    global previous
-    equation = input ('Enter equation: ')
-    if equation == "quit":
-        run = False
-    else:
-        equation = re.sub('[a-zA-Z,.:()" "]', '', equation)
-        previous = eval(equation)
-        print ("You Typed", previous)
+# def perform_math():
+#     global run
+#     global previous
+#     equation = input ('Enter equation: ')
+#     if equation == "quit":
+#         run = False
+#     else:
+#         equation = re.sub('[a-zA-Z,.:()" "]', '', equation)
+#         previous = eval(equation)
+#         print ("You Typed", previous)
 
-while run:
-    perform_math()
+# while run:
+#     perform_math()
 
 
