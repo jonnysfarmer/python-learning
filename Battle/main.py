@@ -17,9 +17,22 @@ magic = [{
     },
 ]
 player = Person(460, 65, 60, 30, magic)
+enemy = Person(1200, 65, 45, 24, magic)
 
-print(player.choose_magic())
-print(player.choose_action())
-print(player.generate_damge())
-print(player.generate_spell_damage(0))
-print(player.generate_spell_damage(1))
+running = True
+
+print(bcolors.FAIL + bcolors.BOLD + 'AN ENEMY ATTAKS!' + bcolors.ENDC)
+
+while running:
+    print('====================')
+    player.choose_action()
+    choice = input('Choose action:')
+    index = int(choice) - 1
+
+    if index == 0:
+        dmg = player.generate_damge()
+        
+
+    print('You choose ', choice)
+
+    running = False
