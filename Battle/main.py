@@ -31,8 +31,9 @@ while running:
 
     if index == 0:
         dmg = player.generate_damge()
-        
+        enemy.take_damage(dmg)
+        print('You attacked for ', dmg, 'points of damage.  Enemy HP: ', enemy.get_hp())
 
-    print('You choose ', choice)
 
-    running = False
+
+    # running = False
