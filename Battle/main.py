@@ -45,9 +45,15 @@ while running:
             continue
 
         player.reduce_mp(spell.cost)
-        enemy.take_damage(magic_damage)
-        print('You cast ', spell.name, 'for', magic_damage, 'points of damage.  Enemy HP: ', enemy.get_hp())
-        print('Your MP is', player.get_mp(), '/', player.get_maxmp())
+
+        if spell.type == 'white':
+            player.heal(magic_damage)
+            print(spell.name, 'heals for', magic_damage )
+            print('Your MP is', player.get_mp(), '/', player.get_maxmp())
+        elif spell.type == 'black':
+            enemy.take_damage(magic_damage)
+            print('You cast ', spell.name, 'for', magic_damage, 'points of damage.  Enemy HP: ', enemy.get_hp())
+            print('Your MP is', player.get_mp(), '/', player.get_maxmp())
     
     
     # Basic Enemy attack
@@ -63,5 +69,11 @@ while running:
     elif player.get_hp() == 0:
         print(bcolors.FAIL + 'Your enemy has deated you' + bcolors.ENDC)
         running = False
+
+    print ('==================')
+    print(bcolors.FAIL + 'Enemy HP' + str(enemy.get_hp()) + '/' + str(enemy.get_maxhp()) + bcolors.ENDC)
+    print(bcolors.OKGREEN + 'Your HP' + str(player.get_hp()) + '/' + str(player.get_maxhp()) + bcolors.ENDC)
+    print(bcolors.OKBLUE + 'Your MP' + str(player.get_mp()) + '/' + str(enemy.get_maxmp()) + bcolors.ENDC)
+
 
     # running = False
