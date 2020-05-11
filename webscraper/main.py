@@ -19,7 +19,11 @@ links = results.findAll('li', {'class': 'b_algo'})
 for item in links:
     item_text = item.find('a').text
     item_href = item.find('a').attrs['href']
+    # This is an example how you can look at parents etc of attributes
+    item_summary = item.find('a').parent.parent.find('p').text
+
 # if both of these excist, then we print them
-    if item_text and item_href:
+    if item_text and item_href and item_summary:
         print(item_text)
         print(item_href)
+        print('Summary:', item_summary) 
